@@ -1,22 +1,25 @@
 ---
-
-- name: General Config
-
+- name: Configurar banner en router Cisco con Ansible Semaphore
   hosts: Routers
-
+  connection: local
+  become: true
   tasks:
+    - name: Configurar banner MOTD
+      ios_banner:
+        banner: motd
+        text: "¡Bienvenido a nuestra red!"
+      register: motd_result
 
-  - name: Add Banner
+    - name: Configurar banner de login
+      ios_banner:
+        banner: login
+        text: "**Ingreso restringido. Solo personal autorizado.**"
+      register: login_result
 
-    ios_banner:
-      banner: login
-      text: |
-        Nicolas Cage is the
-        Tiger King
-      state: present
+    - name: Mostrar resultados
+      debug:
+        msg: "Resultado de la configuración del banner MOTD: {{ motd_result }}"
 
-  - name: Add loopback
-
-    ios_interface:
-      name: Loopback21
-      state: present 
+    - name: Mostrar resultados
+      debug:
+        msg: "Resultado de la configuración del banner de login: {{ login_result }}"
