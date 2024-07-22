@@ -1,6 +1,6 @@
 ---
 - name: Configurar banner en router Cisco con Ansible Semaphore
-  hosts: my_router
+  hosts: Routers
   connection: local
   become: true
   tasks:
