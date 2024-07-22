@@ -1,13 +1,22 @@
 ---
-- name: Configure the login banner
+
+- name: General Config
+
   hosts: Routers
+
   tasks:
 
-  -name: Add Banner
-  cisco.ios.ios_banner:
-    banner: login
-    text: |
-      this is my login banner
-      that contains a multiline
-      string
-    state: present
+  - name: Add Banner
+
+    ios_banner:
+      banner: login
+      text: |
+        Nicolas Cage is the
+        Tiger King
+      state: present
+
+  - name: Add loopback
+
+    ios_interface:
+      name: Loopback21
+      state: present 
