@@ -1,6 +1,6 @@
 ---
 - name: Crear interfaz loopback en router Cisco con Ansible Semaphore
-  hosts: seven-pharma
+  hosts: 181.78.99.141
   
   tasks:
     - name: Crear interfaz loopback 100
