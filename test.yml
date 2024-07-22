@@ -1,8 +1,25 @@
-- name: Configure the login banner
-  cisco.ios.ios_banner:
-    banner: login
-    text: |
-      this is my login banner
-      that contains a multiline
-      string
-    state: present
+---
+- name: Configurar banner en router Cisco con Ansible Semaphore
+  hosts: my_router
+  connection: local
+  become: true
+  tasks:
+    - name: Configurar banner MOTD
+      ios_banner:
+        banner: motd
+        text: "¡Bienvenido a nuestra red!"
+      register: motd_result
+
+    - name: Configurar banner de login
+      ios_banner:
+        banner: login
+        text: "**Ingreso restringido. Solo personal autorizado.**"
+      register: login_result
+
+    - name: Mostrar resultados
+      debug:
+        msg: "Resultado de la configuración del banner MOTD: {{ motd_result }}"
+
+    - name: Mostrar resultados
+      debug:
+        msg: "Resultado de la configuración del banner de login: {{ login_result }}"
