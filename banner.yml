@@ -1,6 +1,6 @@
 ---
 - name: Crear Banner en Cisco IOS
-  hosts: test
+  hosts: sevenpharma
   tasks:
    # - name: Configurar banner MOTD
      # ios_banner:
