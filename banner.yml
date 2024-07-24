@@ -1,0 +1,14 @@
+---
+- name: Crear Banner en Cisco IOS
+  hosts: test
+  tasks:
+   # - name: Configurar banner MOTD
+     # ios_banner:
+       # banner: motd
+       # text: "BIENVENIDO ESTE DISPOSTIVO ES PROPIEDAD DE MOOVIT, CUALQUIER CAMBIO REALIZADO SIN AUTORIZACION SERA REPORTADO"
+     # register: motd_result
+     - name: Configurar banner de login
+       ios_banner:
+         banner: login
+         text: "**Ingreso restringido. Solo personal autorizado.**"
+       register: login_result
