@@ -10,5 +10,5 @@
      - name: Configurar banner de login
        ios_banner:
          banner: login
-         text: "**Ingreso restringido. Solo personal autorizado.**"
+         text: "**Ingreso restringido. Solo personal autorizado XD.**"
        register: login_result
