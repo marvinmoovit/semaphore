@@ -1,6 +1,6 @@
 ---
 - name: Reinicio DHCP
-  hosts: "meraki_servers"
+  hosts: meraki_servers
   gather_facts: no
   become: yes
   tasks:
