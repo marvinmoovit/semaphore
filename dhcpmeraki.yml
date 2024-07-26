@@ -5,20 +5,20 @@
   become: yes
   tasks:
     - name: Detener DHCP
-      cisco.meraki.networks_appliance_vlans:
-        networkId: "L_584342051651328739"
-        id: 15
-        dhcpHandling: 'Do not respond to DHCP requests'
+      cisco.meraki.meraki_mx_vlan:
+        net_id: "L_584342051651328739"
+        vlan_id: 15
+        dhcp_handling: "Do not respond to DHCP requests"
         state: "present"
 
     - name: Esperar 30 segundos
       pause:
         seconds: 30
     - name: Iniciar DHCP
-      cisco.meraki.networks_appliance_vlans:
-        networkId: "L_584342051651328739"
-        id: 15
-        dhcpHandling: 'Run a DHCP server'
+      cisco.meraki.meraki_mx_vlan:
+        net_id: "L_584342051651328739"
+        vlan_id: 15
+        dhcp_handling: "Run a DHCP server"
         state: "present"
 
 
