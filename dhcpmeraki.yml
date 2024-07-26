@@ -6,12 +6,12 @@
   tasks:
     - name: Detener DHCP
       cisco.meraki.meraki_mx_vlan:
-        auth_key: 13fd3dafae84f09fc710032d6287a2a7fade1914
+        auth_key: "13fd3dafae84f09fc710032d6287a2a7fade1914"
       
     - name: Esperar 30 segundos
       pause:
         seconds: 30
     - name: Iniciar DHCP
       cisco.meraki.meraki_mx_vlan:
-        auth_key: 13fd3dafae84f09fc710032d6287a2a7fade1914
+        auth_key: "13fd3dafae84f09fc710032d6287a2a7fade1914"
 
