@@ -5,11 +5,11 @@
   become: yes
   tasks:
     - name: Detener DHCP
-      cisco.meraki.networks_appliance_vlans:
+      cisco.meraki.meraki_mx_vlan:
       
     - name: Esperar 30 segundos
       pause:
         seconds: 30
     - name: Iniciar DHCP
-      cisco.meraki.networks_appliance_vlans:
+      cisco.meraki.meraki_mx_vlan:
 
