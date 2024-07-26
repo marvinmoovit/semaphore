@@ -1,17 +1,14 @@
 ---
-- name: Reinicio DHCP
-  hosts: "meraki_servers"
-  gather_facts: no
-  become: yes
+- hosts: meraki_servers
+  gather_facts: false
   tasks:
-    - name: Detener DHCP
-      cisco.meraki.meraki_mx_vlan:
-        auth_key: "13fd3dafae84f09fc710032d6287a2a7fade1914"
-      
-    - name: Esperar 30 segundos
-      pause:
-        seconds: 30
-    - name: Iniciar DHCP
-      cisco.meraki.meraki_mx_vlan:
-        auth_key: "13fd3dafae84f09fc710032d6287a2a7fade1914"
+    - name: Get all Organizations
+      cisco.meraki.organizations_info:
+        meraki_suppress_logging: true
+      register: result
+
+    - name: Show current Meraki administrator
+      ansible.builtin.debug:
+        msg: "{{ result | json_query('meraki_response[*].name') }}"
+        
 
