@@ -1,28 +1,13 @@
 ---
-- name: Reinicio DHCP
-  hosts: "meraki_servers"
-  gather_facts: no
-  become: yes
+- hosts: meraki_servers
+  gather_facts: false
   tasks:
-    - name: Detener DHCP
-      cisco.meraki.meraki_mx_vlan:
-        auth_key: "13fd3dafae84f09fc710032d6287a2a7fade1914"
-        net_id: "L_584342051651328739"
-        vlan_id: 15
-        dhcp_handling: "Do not respond to DHCP requests"
-        state: "present"
+    - name: Get my administered identities
+      cisco.meraki.administered_identities_me_info:
+      register: result
 
-    - name: Esperar 30 segundos
-      pause:
-        seconds: 30
-    - name: Iniciar DHCP
-      cisco.meraki.meraki_mx_vlan:
-        auth_key: "13fd3dafae84f09fc710032d6287a2a7fade1914"
-        net_id: "L_584342051651328739"
-        vlan_id: 15
-        dhcp_handling: "Run a DHCP server"
-        state: "present"
-
-
+    - name: Show result
+      ansible.builtin.debug:
+        msg: "{{ result }}"
 
 
