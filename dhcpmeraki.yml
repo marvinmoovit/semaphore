@@ -4,6 +4,7 @@
   tasks:
     - name: Get my administered identities
       cisco.meraki.administered_identities_me_info:
+       meraki_api_key: "13fd3dafae84f09fc710032d6287a2a7fade1914"
       register: result
 
     - name: Show result
