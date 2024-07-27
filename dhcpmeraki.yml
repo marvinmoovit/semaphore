@@ -12,9 +12,9 @@
         dhcpHandling: 'Do not respond to DHCP requests'
         state: "present"
 
-    - name: Esperar 30 segundos
+    - name: Esperar 5 minutos
       pause:
-        seconds: 30
+        minutes: 5
     - name: Iniciar DHCP
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
