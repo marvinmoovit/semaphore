@@ -6,6 +6,7 @@
   tasks:
     - name: Detener DHCP
       cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "13fd3dafae84f09fc710032d6287a2a7fade1914"
         networkId: "L_584342051651328739"
         id: 15
         dhcpHandling: 'Do not respond to DHCP requests'
@@ -16,7 +17,9 @@
         seconds: 30
     - name: Iniciar DHCP
       cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "13fd3dafae84f09fc710032d6287a2a7fade1914"
         networkId: "L_584342051651328739"
         id: 15
         dhcpHandling: 'Run a DHCP server'
         state: "present"
+
