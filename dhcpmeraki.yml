@@ -7,18 +7,18 @@
     - name: Detener DHCP
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
-        networkId: "L_584342051651328739"
+        networkId: "{{networkId}}"
         id: 15
         dhcpHandling: 'Do not respond to DHCP requests'
         state: "present"
 
     - name: Esperar 5 minutos
       pause:
-        minutes: 5
+        seconds: 30
     - name: Iniciar DHCP
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
-        networkId: "L_584342051651328739"
+        networkId: "{{networkId}}"
         id: 15
         dhcpHandling: 'Run a DHCP server'
         state: "present"
