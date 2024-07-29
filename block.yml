@@ -9,6 +9,6 @@
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
         clients:
-        mac: "C0:25:67:07:98:00"
+          mac: "C0:25:67:07:98:00"
         policiesBySecurityAppliance:
         devicePolicy: 'Blocked'
