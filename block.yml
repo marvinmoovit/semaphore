@@ -11,4 +11,4 @@
         clients:
           - mac: "C0:25:67:07:98:00"
         policiesBySecurityAppliance:
-           devicePolicy: 'Blocked'
+        devicePolicy: 'Blocked'
