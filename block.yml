@@ -14,4 +14,4 @@
         devicePolicy: 'Blocked'
         policiesBySecurityAppliance:
            devicePolicy: 'Blocked'
-        policiesBySsid: 'Blocked'
+        policiesBySsid:
