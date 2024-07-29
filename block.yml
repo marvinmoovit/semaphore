@@ -8,3 +8,6 @@
       cisco.meraki.networks_clients_provision:
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
+        clients:
+          - mac: 00:18:E7:F9:D0:DE
+          devicePolicy: 'Blocked'
