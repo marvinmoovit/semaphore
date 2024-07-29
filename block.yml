@@ -5,3 +5,4 @@
   become: yes
   tasks:
     - name: Bloquear Usuario
+      cisco.meraki.networks_clients_provision:
