@@ -7,4 +7,3 @@
     - name: Bloquear Usuario
       cisco.meraki.networks_clients_provision:
       meraki_api_key: "{{meraki_api_key}}"
-        networkId: "{{networkId}}"
