@@ -10,6 +10,6 @@
         networkId: "{{networkId}}"
         - mac: 00:11:22:33:44:55
           name: Miles's phone
-        devicePolicy: Blocked
-        policiesBySecurityAppliance:
-          devicePolicy: Blocked
+        - devicePolicy: Blocked
+        - policiesBySecurityAppliance:
+            devicePolicy: Blocked
