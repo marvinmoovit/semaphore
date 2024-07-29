@@ -9,9 +9,5 @@
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
         clients:
-          - mac: "{{ item }}"
-        loop:
-          - "C0:25:67:07:98:00"
-          - "00:18:E7:F9:D0:DE"
+          - mac: "C0:25:67:07:98:00"
         devicePolicy: 'Blocked'
-
