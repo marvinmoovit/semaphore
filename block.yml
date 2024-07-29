@@ -10,4 +10,4 @@
         networkId: "{{networkId}}"
         clients:
           - mac: 00:18:E7:F9:D0:DE
-          devicePolicy: Blocked
+          - devicePolicy: Blocked
