@@ -12,3 +12,4 @@
           - mac: "C0:25:67:07:98:00"
         groupPolicyId: 'Blocked'
         devicePolicy: 'Blocked'
+        policiesBySecurityAppliance: 'Blocked'
