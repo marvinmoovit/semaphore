@@ -9,4 +9,3 @@
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
         clients:
-        policiesBySecurityAppliance:
