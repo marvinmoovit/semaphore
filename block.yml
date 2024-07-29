@@ -10,5 +10,4 @@
         networkId: "{{networkId}}"
         clients:
           - mac: "C0:25:67:07:98:00"
-        policiesBySecurityAppliance:
-        devicePolicy: 'Blocked'
+        groupPolicyId: 'Blocked'
