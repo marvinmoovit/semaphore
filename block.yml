@@ -1,0 +1,17 @@
+---
+- name: Bloqueo de MAC
+  hosts: "meraki_servers"
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Bloquear Usuario
+      cisco.meraki.networks_clients_provision:
+        meraki_api_key: "{{meraki_api_key}}"
+        networkId: "{{networkId}}"
+        clients:
+          - mac: "{{ item }}"
+        loop:
+          - "C0:25:67:07:98:00"
+          - "00:18:E7:F9:D0:DE"
+        devicePolicy: 'Blocked'
+
