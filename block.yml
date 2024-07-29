@@ -8,6 +8,8 @@
       cisco.meraki.networks_clients_provision:
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
-        clients:
-          - mac: 00:18:E7:F9:D0:DE
-          devicePolicy: 'Group policy'
+        - mac: 00:11:22:33:44:55
+          name: Miles's phone
+        devicePolicy: Blocked
+        policiesBySecurityAppliance:
+          devicePolicy: Blocked
