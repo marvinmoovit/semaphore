@@ -4,7 +4,7 @@
   gather_facts: no
   become: yes
   tasks:
-    - name: Detener DHCP
+    - name: Detener DHCP COLABORADORES
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
@@ -15,7 +15,7 @@
     - name: Esperar 5 minutos
       pause:
         seconds: 30
-    - name: Iniciar DHCP
+    - name: Iniciar DHCP COLABORADORES
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
@@ -23,7 +23,7 @@
         dhcpHandling: 'Run a DHCP server'
         state: "present"
 
-    - name: Detener DHCP
+    - name: Detener DHCP INVENTARIO
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
@@ -34,7 +34,7 @@
     - name: Esperar 5 minutos
       pause:
         seconds: 30
-    - name: Iniciar DHCP
+    - name: Iniciar DHCP INVENTARIO
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
