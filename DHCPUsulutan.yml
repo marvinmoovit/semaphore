@@ -8,7 +8,7 @@
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
-        id: 15
+        id: 13
         dhcpHandling: 'Do not respond to DHCP requests'
         state: "present"
 
@@ -19,7 +19,7 @@
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
-        id: 15
+        id: 13
         dhcpHandling: 'Run a DHCP server'
         state: "present"
 
@@ -46,7 +46,7 @@
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
-        id: 13
+        id: 11
         dhcpHandling: 'Do not respond to DHCP requests'
         state: "present"
 
@@ -57,6 +57,6 @@
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
-        id: 13
+        id: 11
         dhcpHandling: 'Run a DHCP server'
         state: "present"
