@@ -23,7 +23,7 @@
         dhcpHandling: 'Run a DHCP server'
         state: "present"
 
-         - name: Detener DHCP
+    - name: Detener DHCP
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
         networkId: "{{networkId}}"
