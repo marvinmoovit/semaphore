@@ -1,0 +1,62 @@
+---
+- name: Reinicio DHCP
+  hosts: "meraki_servers"
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Detener DHCP COLABORADORES
+      cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "{{meraki_api_key}}"
+        networkId: "{{networkId}}"
+        id: 15
+        dhcpHandling: 'Do not respond to DHCP requests'
+        state: "present"
+
+    - name: Esperar 5 minutos
+      pause:
+        minutes: 5
+    - name: Iniciar DHCP COLABORADORES
+      cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "{{meraki_api_key}}"
+        networkId: "{{networkId}}"
+        id: 15
+        dhcpHandling: 'Run a DHCP server'
+        state: "present"
+
+    - name: Detener DHCP INVENTARIO
+      cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "{{meraki_api_key}}"
+        networkId: "{{networkId}}"
+        id: 12
+        dhcpHandling: 'Do not respond to DHCP requests'
+        state: "present"
+
+    - name: Esperar 5 minutos
+      pause:
+        minutes: 5
+    - name: Iniciar DHCP INVENTARIO
+      cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "{{meraki_api_key}}"
+        networkId: "{{networkId}}"
+        id: 12
+        dhcpHandling: 'Run a DHCP server'
+        state: "present"
+    
+    - name: Detener DHCP TRINVAS
+      cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "{{meraki_api_key}}"
+        networkId: "{{networkId}}"
+        id: 13
+        dhcpHandling: 'Do not respond to DHCP requests'
+        state: "present"
+
+    - name: Esperar 5 minutos
+      pause:
+        minutes: 5
+    - name: Iniciar DHCP TRINVAS
+      cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "{{meraki_api_key}}"
+        networkId: "{{networkId}}"
+        id: 13
+        dhcpHandling: 'Run a DHCP server'
+        state: "present"
