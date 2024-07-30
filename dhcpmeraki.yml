@@ -41,3 +41,22 @@
         id: 11
         dhcpHandling: 'Run a DHCP server'
         state: "present"
+    
+    - name: Detener DHCP TRINVAS
+      cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "{{meraki_api_key}}"
+        networkId: "{{networkId}}"
+        id: 13
+        dhcpHandling: 'Do not respond to DHCP requests'
+        state: "present"
+
+    - name: Esperar 5 minutos
+      pause:
+        seconds: 30
+    - name: Iniciar DHCP TRINVAS
+      cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "{{meraki_api_key}}"
+        networkId: "{{networkId}}"
+        id: 13
+        dhcpHandling: 'Run a DHCP server'
+        state: "present"
