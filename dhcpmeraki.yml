@@ -14,7 +14,7 @@
 
     - name: Esperar 5 minutos
       pause:
-        seconds: 30
+        minutes: 5
     - name: Iniciar DHCP COLABORADORES
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
@@ -33,7 +33,7 @@
 
     - name: Esperar 5 minutos
       pause:
-        seconds: 30
+        minutes: 5
     - name: Iniciar DHCP INVENTARIO
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
@@ -52,7 +52,7 @@
 
     - name: Esperar 5 minutos
       pause:
-        seconds: 30
+        minutes: 5
     - name: Iniciar DHCP TRINVAS
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{meraki_api_key}}"
